@@ -1,0 +1,27 @@
+port: <%= node[:kibana][:port] %>
+host: "<%= node[:kibana][:host] %>"
+
+default_app_id: "<%= node[:kibana][:app_id] %>"
+kibana_index: "<%= node[:kibana][:index] %>"
+
+request_timeout: <%= node[:kibana][:request_timeout] %>
+shard_timeout: <%= node[:kibana][:shard_timeout] %>
+
+verify_ssl: "<%= node[:kibana][:verify_ssl] %>"
+ca: "<%= node[:kibana][:ca] %>"
+ssl_key_file: "<%= node[:kibana][:ssl_key_file] %>"
+ssl_cert_file: "<%= node[:kibana][:ssl_cert_file] %>"
+
+elasticsearch_url: "<%= node[:elasticsearch][:url] %>"
+
+# Plugins that are included in the build, and no longer found in the plugins/ folder
+bundled_plugin_ids:
+ - plugins/dashboard/index
+ - plugins/discover/index
+ - plugins/doc/index
+ - plugins/kibana/index
+ - plugins/metric_vis/index
+ - plugins/settings/index
+ - plugins/table_vis/index
+ - plugins/vis_types/index
+ - plugins/visualize/index
